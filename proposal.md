@@ -17,10 +17,10 @@ For this project I will have to learn how to play audio files through PyGame, as
 
 ## Outcomes
 
-### Ideal Outcome
+### <ins>Ideal Outcome</ins>
 The ideal outcome for this project is to end up with a soundboard that users can place there own sound effects into and change. As well as hotkeys so users don't need to keep the window open to play the SFX 
 
-### Minimal Viable Outcome
+### <ins>Minimal Viable Outcome</ins>
 The next best outcome would be a program that still has the buttons that can play sound effects but there are no hotkeys for each button, so users have to use their mouse to click every button.
 
 ## Milestones
