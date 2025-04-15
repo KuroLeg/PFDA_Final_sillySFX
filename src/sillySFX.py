@@ -25,11 +25,11 @@ def main():
 
         def draw(self):
             if self.check_click():
-                button_rect = pygame.rect.Rect((self.x_pos,self.y_pos),(65,65))
+                button_rect = pygame.rect.Rect((self.x_pos,self.y_pos),(95,95))
                 button_txt = txtFont.render(self.text, True,'dark gray')
             else:
                 button_txt = txtFont.render(self.text, True, 'black')
-                button_rect = pygame.rect.Rect((self.x_pos,self.y_pos),(70,70))
+                button_rect = pygame.rect.Rect((self.x_pos,self.y_pos),(100,100))
             
             
             pygame.draw.rect(screen ,self.color, button_rect, 0,5)
@@ -38,13 +38,16 @@ def main():
         def check_click(self):
             mouse_pos = pygame.mouse.get_pos()
             click = pygame.mouse.get_pressed()[0]
-            button_rect = pygame.rect.Rect((self.x_pos,self.y_pos),(70,70))
+            button_rect = pygame.rect.Rect((self.x_pos,self.y_pos),(100,100))
             if click and button_rect.collidepoint(mouse_pos) and self.enabled:
                 return True
             else:
                 return False
 
-
+    channel = pygame.mixer.Channel(0)
+    #This is where you choose the sound effect files to place per button(mp3,wav,aiff)
+    sfx1 = pygame.mixer.Sound('Flapjack_Scream.mp3')
+    sfx2 = pygame.mixer.Sound('Vine_Boom.mp3')
 
     running = True
     while running:
@@ -52,8 +55,21 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill(bg_color)
-        my_button = Button('Silly fart', 10,10,(95,200,25),True)
-        #print(my_button.check_click())
+        button01 = Button('Scream', 20,10,(95,200,25),True)
+        button02 = Button('Thud', 140,10,'Blue',True)
+        
+        #Code for the sounds to play
+        if event.type == pygame.MOUSEBUTTONDOWN:
+            if button01.check_click():
+                channel.play(sfx1)
+            if button02.check_click():
+                channel.play(sfx2)
+
+        #Code for the Keyboard Shortcuts
+        keys = pygame.key.get_pressed()
+        if keys[pygame.K_1]:
+            channel.play(sfx1)
+
         pygame.display.flip()
     pygame.quit()
 
