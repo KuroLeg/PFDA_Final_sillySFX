@@ -64,6 +64,12 @@ def main():
     sfx1 = pygame.mixer.Sound('Flapjack_Scream.mp3')
     sfx2 = pygame.mixer.Sound('Vine_Boom.mp3')
     sfx3 = pygame.mixer.Sound('UncleRuckus_Theme.mp3')
+    sfx4 = pygame.mixer.Sound('Alarm_meme.mp3')
+    sfx5 = pygame.mixer.Sound('IDFWU_meme.mp3')
+    sfx6 = pygame.mixer.Sound('Are_you_sure.mp3')
+    sfx7 = pygame.mixer.Sound('Nope.mp3')
+    sfx8 = pygame.mixer.Sound('boo_wop.mp3')
+    sfx9 = pygame.mixer.Sound('fart.mp3')
     #-------------------------------------------------------------------
 
     running = True
@@ -78,13 +84,13 @@ def main():
         button02 = Button('Thud', 200,110,pal_orange,True)
         button03 = Button('Trombone',320,110,pal_lightyellow,True)
 
-        button04 = Button('sfx4',80,230,pal_lightgreen,True)
-        button05 = Button('sfx5',200,230,pal_green,True)
-        button06 = Button('sfx6',320,230,pal_lightblue,True)
+        button04 = Button('Alarm',80,230,pal_lightgreen,True)
+        button05 = Button('Sad sfx1',200,230,pal_green,True)
+        button06 = Button('U sure?',320,230,pal_lightblue,True)
         
-        button07 = Button('sfx7',80,350,pal_blue,True)
-        button08 = Button('sfx8',200,350,pal_magenta,True)
-        button09 = Button('sfx9',320,350,pal_purple,True)
+        button07 = Button('NOPE',80,350,pal_blue,True)
+        button08 = Button('sad sfx2',200,350,pal_magenta,True)
+        button09 = Button('fart',320,350,pal_purple,True)
         #-------------------------------------------------------------
 
 
@@ -97,6 +103,18 @@ def main():
                 channel.play(sfx2)
             if button03.check_click():
                 channel.play(sfx3)
+            if button04.check_click():
+                channel.play(sfx4)
+            if button05.check_click():
+                channel.play(sfx5)
+            if button06.check_click():
+                channel.play(sfx6)
+            if button07.check_click():
+                channel.play(sfx7)
+            if button08.check_click():
+                channel.play(sfx8)
+            if button09.check_click():
+                channel.play(sfx9)
         #---------------------------------------------
        
         #Code for the Keyboard Shortcuts
@@ -107,6 +125,18 @@ def main():
             channel.play(sfx2)
         if keys[pygame.K_3]:
             channel.play(sfx3)
+        if keys[pygame.K_4]:
+            channel.play(sfx4)
+        if keys[pygame.K_5]:
+            channel.play(sfx5)
+        if keys[pygame.K_6]:
+            channel.play(sfx6)
+        if keys[pygame.K_7]:
+            channel.play(sfx7)
+        if keys[pygame.K_8]:
+            channel.play(sfx8)
+        if keys[pygame.K_9]:
+            channel.play(sfx9)
 
         pygame.display.flip()
     pygame.quit()
