@@ -7,7 +7,7 @@ def main():
     
     pygame.init()
     pygame.display.set_caption('Silly SFX')
-    txtFont= pygame.font.SysFont('cambria',18)
+    txtFont= pygame.font.SysFont('Courier',18)
     resolution =((500,500))
     bg_color = pygame.Color(54,24,56)
     screen = pygame.display.set_mode(resolution, pygame.RESIZABLE)
@@ -63,6 +63,7 @@ def main():
     channel = pygame.mixer.Channel(0)
     sfx1 = pygame.mixer.Sound('Flapjack_Scream.mp3')
     sfx2 = pygame.mixer.Sound('Vine_Boom.mp3')
+    sfx3 = pygame.mixer.Sound('UncleRuckus_Theme.mp3')
     #-------------------------------------------------------------------
 
     running = True
@@ -71,9 +72,11 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill(bg_color)
+
+        #Buttons
         button01 = Button('Scream', 80,110,pal_red,True)
         button02 = Button('Thud', 200,110,pal_orange,True)
-        button03 = Button('sfx3',320,110,pal_lightyellow,True)
+        button03 = Button('Trombone',320,110,pal_lightyellow,True)
 
         button04 = Button('sfx4',80,230,pal_lightgreen,True)
         button05 = Button('sfx5',200,230,pal_green,True)
@@ -82,6 +85,9 @@ def main():
         button07 = Button('sfx7',80,350,pal_blue,True)
         button08 = Button('sfx8',200,350,pal_magenta,True)
         button09 = Button('sfx9',320,350,pal_purple,True)
+        #-------------------------------------------------------------
+
+
         #Code for the sounds to play
         #---------------------------------------------
         if event.type == pygame.MOUSEBUTTONDOWN:
@@ -89,6 +95,8 @@ def main():
                 channel.play(sfx1)
             if button02.check_click():
                 channel.play(sfx2)
+            if button03.check_click():
+                channel.play(sfx3)
         #---------------------------------------------
        
         #Code for the Keyboard Shortcuts
@@ -97,6 +105,8 @@ def main():
             channel.play(sfx1)
         if keys[pygame.K_2]:
             channel.play(sfx2)
+        if keys[pygame.K_3]:
+            channel.play(sfx3)
 
         pygame.display.flip()
     pygame.quit()
