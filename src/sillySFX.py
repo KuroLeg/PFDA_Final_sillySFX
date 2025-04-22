@@ -9,7 +9,7 @@ def main():
     pygame.display.set_caption('Silly SFX')
     txtFont= pygame.font.SysFont('cambria',18)
     resolution =((500,500))
-    bg_color = pygame.Color(255,255,255)
+    bg_color = pygame.Color(54,24,56)
     screen = pygame.display.set_mode(resolution, pygame.RESIZABLE)
     
     #Button Object
@@ -55,8 +55,9 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill(bg_color)
-        button01 = Button('Scream', 20,10,(95,200,25),True)
-        button02 = Button('Thud', 140,10,'Blue',True)
+        button01 = Button('Scream', 70,50,(227,68,86),True)
+        button02 = Button('Thud', 190,50,(122,213,104),True)
+        button03 = Button('sfx3',310,50,'yellow',True)
         
         #Code for the sounds to play
         if event.type == pygame.MOUSEBUTTONDOWN:
