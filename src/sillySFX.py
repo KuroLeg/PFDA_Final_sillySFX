@@ -11,6 +11,7 @@ def main():
     resolution =((500,500))
     bg_color = pygame.Color(54,24,56)
     screen = pygame.display.set_mode(resolution, pygame.RESIZABLE)
+    image = pygame.image.load('Title.png')
 
     #color Pallette for buttons
     #-------------------------------------------------------------------
@@ -78,6 +79,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
         screen.fill(bg_color)
+        screen.blit(image,(0,0))
 
         #Buttons
         button01 = Button('Scream', 80,110,pal_red,True)
